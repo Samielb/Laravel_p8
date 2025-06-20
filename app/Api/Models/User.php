@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Api\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,11 +28,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    // ✅ Relatie met rollen
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class)->withTimestamps();
     }
 }
